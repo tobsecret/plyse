@@ -77,7 +77,7 @@ new_query.query_from_stack(level=1)  # returns the query with age filter
 
 ## Traversing query trees
 A query tree is a composition of **TreeNodes**, which defines the basic interface for nodes. A node can be of type **Operator** or **Operand**. Query trees are binary trees (almost true except for 'Not' operator which has only one input/child) so every node is an **Operator** that has childs/inputs and every leaf is an **Operand** which is a representation of a query **Term**. You can traverse the tree by asking for the node's children, checking if is a leaf.
-You can also ask for all the leafs of a particular node.
+You can also ask for all the leaves of a particular node.
 
 ```python
 print query.terms()
@@ -97,12 +97,12 @@ print query.query_as_tree.inputs[1]
 ```
 **Operators** have some extra methods you can query to find out if it supports left and right operands, the name of the Operator and so on. **Operands** can be treated as dicts.
 
-**TreeNode** have methods for traversing and querying for nodes and leafs:
+**TreeNode** have methods for traversing and querying for nodes and leaves:
 
 ```python
 print query.query_as_tree.is_leaf
 # False
-print len(query.query_as_tree.leafs)
+print len(query.query_as_tree.leaves)
 # 2
 ```
 
